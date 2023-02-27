@@ -3,7 +3,7 @@ function something()
 {
 	let x = window.localStorage.getItem('bbb');
 
-	x = x * 1 + 1;
+	x = x * 1 + 1; // фишка чтобы не было конкатенации строк
 
 	window.localStorage.setItem('bbb', x);
 	
