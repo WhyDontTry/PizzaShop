@@ -1,2 +1,16 @@
 <h2>Welcome to Pizza Shop!</h2>
-<button class="btn btn-primary" onclick="something()">Click me!</button>
+<div class="container">
+  <div class="row">
+  	<% @products.each do |product| %>
+  	<div class="col-md-3">
+  		<img src="<%= product.path_to_image %>" alt="Responsive image" class="img-rounded">
+  		<h4> <%= product.title %></h4>
+  		<p> <%= product.description %></p>
+  		<div>Price: <%= product.price %> RUB</div> 
+  		<div>Size: <%= product.size %></div>
+  		<button class="btn btn-primary" onclick="something()">Add to basket!</button>
+  	</div>
+  	<% end %>
+  </div>
+</div>
+
