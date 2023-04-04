@@ -20,5 +20,10 @@ get '/about' do
 end
 
 post '/cart' do
-    erb 'Hello!'
+    redirect '/cart'
+end
+
+get '/cart' do
+
+    erb :cart
 end
