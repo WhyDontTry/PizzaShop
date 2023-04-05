@@ -1,1 +1,19 @@
 <h2>Содержимое корзины:</h2>
+<table class="table table-striped">
+  <thead>
+  	<tr>
+  		<th scope="col">#</th>
+  		<th scope="col">Product</th>
+  		<th scope="col">Number</th>
+  	</tr>
+  </thead>
+  <tbody>
+  	<% @hh.each do |key, val| %>
+  		<tr>
+  			<th scope="col">#</th>
+  			<th scope="col"><%= key %></th>
+  			<th scope="col"><%= val %></th>
+  		</tr>
+  	<% end %>
+  </tbody>
+</table>
