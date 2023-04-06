@@ -20,31 +20,35 @@ get '/about' do
 end
 
 post '/cart' do
-    @orders = params[:orders]
-    s1 = @orders.split(',')
+    orders_input = params[:orders]
+    @orders = parse_orders_input(orders_input)
 
-    @hh = {}
-    s1.each do |el|
-        s2 = el.split('=')
-        s3 = s2[0].split('_')
 
-        key = s3[1]
-        value = s2[1]
+    erb "Hello! #{@orders.inspect}"
+end
 
-        @hh[key] = value
-    end
+get '/cart' do
 
     erb :cart
 end
 
-get '/cart' do
-    @orders = params[:orders]
-    @orders = @orders.split(',')
+def parse_orders_input orders_input
 
-    @hh = {}
-    @orders.each do |str|
-        @hh[str.slice(/product_\d/)] = 0
+    s1 = orders_input.split(',')
+
+    arr = []
+    s1.each do |el|
+        s2 = el.split('=')
+        s3 = s2[0].split('_')
+
+        id  = s3[1]
+        cnt = s2[1]
+
+        arr2 = [id, cnt]
+
+        arr.push arr2
+
     end
 
-    erb :cart
+    return arr
 end
