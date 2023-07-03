@@ -4,15 +4,17 @@
   	<tr>
   		<th scope="col">#</th>
   		<th scope="col">Product</th>
+		<th scope="col">Price</th>
   		<th scope="col">Number</th>
   	</tr>
   </thead>
   <tbody>
-  	<% @hh.each do |key, val| %>
+  	<% @items.each do |item| %>
   		<tr>
   			<th scope="col">#</th>
-  			<th scope="col"><%= key %></th>
-  			<th scope="col"><%= val %></th>
+  			<th scope="col"><%= item[0].title %></th>
+  			<th scope="col"><%= item[0].price %></th>
+			<th scope="col"><%= item[1]%></th>
   		</tr>
   	<% end %>
   </tbody>
