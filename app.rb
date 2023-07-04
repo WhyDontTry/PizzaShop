@@ -10,6 +10,10 @@ class Product < ActiveRecord::Base
 
 end
 
+class Order < ActiveRecord::Base
+
+end
+
 get '/' do
     @products = Product.order('created_at DESC')
     erb :index 
@@ -36,6 +40,11 @@ end
 get '/cart' do
 
     erb :cart
+end
+
+post '/place_order' do
+    o = Order.new params[:order]
+    o.save
 end
 
 def parse_orders_input orders_input
