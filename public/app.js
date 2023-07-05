@@ -64,6 +64,11 @@ function cart_get_orders()
 
 function cancel_order()
 {
-	alert('Do you really want to cancel this order?');
+	window.localStorage.clear();
+
+	update_orders_input();
+
+	update_orders_button();
+	
 	return false;
 }
