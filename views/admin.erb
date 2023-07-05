@@ -1,0 +1,27 @@
+<h2>Orders</h2>
+
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Name</th>
+			<th scope="col">Phone</th>
+			<th scope="col">Address</th>
+            <th scope="col">Orders</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<% @orders.each do |order| %>
+			<tr>
+				<th scope="col"><%= order.id %></th>
+				<th scope="col"><%= order.name %></th>
+				<th scope="col"><%= order.phone %></th>
+				<th scope="col"><%= order.address%></th>
+                <th scope="col"><%= order.order_input%></th>
+			</tr>
+
+		<% end %>
+
+	</tbody>
+	</table>
