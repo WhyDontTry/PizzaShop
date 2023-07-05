@@ -60,3 +60,10 @@ function cart_get_orders()
 	
 	return orders;
 }
+
+
+function cancel_order()
+{
+	alert('Do you really want to cancel this order?');
+	return false;
+}

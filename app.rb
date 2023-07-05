@@ -43,8 +43,9 @@ get '/cart' do
 end
 
 post '/place_order' do
-    o = Order.new params[:order]
-    o.save
+    order = Order.new params[:order]
+    order.save
+    erb :order_placed
 end
 
 def parse_orders_input orders_input
